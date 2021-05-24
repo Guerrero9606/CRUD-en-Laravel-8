@@ -15,7 +15,7 @@ class EmpleadoController extends Controller
     public function index()
     {
         //
-        $datos['empleados']=Empleado::paginate(1);
+        $datos['empleados']=Empleado::paginate(5);
         return view('empleado.index',$datos);
     }
 
@@ -44,7 +44,7 @@ class EmpleadoController extends Controller
             'Nombre'=>'required|string|max:100',
             'Apellido'=>'required|string|max:100',
             'Correo'=>'required|email',
-            'Telefono'=>'required|decimal|max:10',
+            'Telefono'=>'required|digits:10',
             'Direccion'=>'required|string|max:100'
         ];
         $mensaje=[
